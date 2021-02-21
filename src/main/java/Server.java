@@ -23,7 +23,7 @@ public class Server {
                 writeToUser(writer, String.format("Hi, User, your port is %d", socket.getPort()));
                 writeToUser(writer, "Please write your name");
                 String name = reader.readLine();
-                writeToUser(writer, String.format("Ok, %s, are you a child?", name));
+                writeToUser(writer, String.format("Ok, %s, are you a child? (yes/no)", name));
                 String answer = reader.readLine();
 
                 if (answer.equals("yes")) {
