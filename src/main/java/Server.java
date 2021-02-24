@@ -26,16 +26,16 @@ public class Server {
                 writeToUser(writer, String.format("Ok, %s, are you a child? (yes/no)", name));
                 String answer = reader.readLine();
 
-                if (answer.equals("yes")) {
-                    writeToUser(writer, String.format("Welcome to the kids area, %s! Let's play!", name));
-                }
-                if (answer.equals("no")) {
-                    writeToUser(writer,
+                switch (answer) {
+                    case "yes":
+                        writeToUser(writer, String.format("Welcome to the kids area, %s! Let's play!", name));
+                    case "no":
+                        writeToUser(writer,
                             String.format("Welcome to the adult zone, %s! " +
                                     "Have a good rest, or a good working day!", name));
+                    default:
+                        writeToUser(writer, "Unknown response, connection is closed");
                 }
-
-                writeToUser(writer, "Unknown response, connection is closed");
 
             } catch (IOException e) {
                 e.printStackTrace();
