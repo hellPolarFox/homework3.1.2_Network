@@ -29,15 +29,12 @@ public class Server {
                 switch (answer) {
                     case "yes":
                         writeToUser(writer, String.format("Welcome to the kids area, %s! Let's play!", name));
-                        break;
                     case "no":
                         writeToUser(writer,
                             String.format("Welcome to the adult zone, %s! " +
                                     "Have a good rest, or a good working day!", name));
-                        break;
                     default:
                         writeToUser(writer, "Unknown response, connection is closed");
-                        break;
                 }
 
             } catch (IOException e) {
